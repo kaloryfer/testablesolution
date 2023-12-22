@@ -8,20 +8,20 @@ pipeline {
     stages {
         stage('Build solution') {
             steps {
-                dir("Math.Tests")
-                bat "${dotnet} build"
+                dir("Math.Tests") {bat "${dotnet} build"}
+                
             }
         }
         stage('Test Solution') {
             steps {
-                dir("Math.Tests")
-                bat "${dotnet} test"
+                dir("Math.Tests"){
+                bat "${dotnet} test"}
             }
         }
         stage('Clean solution') {
             steps {
-                dir("Math.Tests")
-                bat "${dotnet} build"
+                dir("Math.Tests"){
+                bat "${dotnet} build"}
             }
         }
     }
